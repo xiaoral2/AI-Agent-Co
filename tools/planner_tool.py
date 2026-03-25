@@ -60,6 +60,9 @@ def plan_with_llm(
         "Every test-type task must include a 'verification' object with 'kind' and 'paths'. "
         "You may include `type: design` tasks that produce docs/interface.md; place them before "
         "dependent `code` tasks using `depends_on`. "
+        "For every task, fields `input`, `output`, `description`, and `test_plan` must be JSON "
+        "strings (plain text), never nested objects. For design tasks, describe paths and content "
+        "in those strings; do not use `{{\"file\": \"...\", \"content\": \"...\"}}` as a field value. "
         "Return ONLY the JSON array in a ```json fenced block."
     )
 

@@ -45,6 +45,25 @@ def test_run_pytest_minimal(tmp_path: Path) -> None:
     assert "passed" in out.lower() or out.strip() == ""
 
 
+def test_run_pytest_ignores_parent_pyproject_addopts(tmp_path: Path) -> None:
+    """Workspace nested under a repo root must not inherit harness coverage addopts."""
+    parent = tmp_path / "harness_root"
+    ws = parent / "workspace"
+    (ws / "tests").mkdir(parents=True)
+    (ws / "tests" / "test_ok.py").write_text(
+        "def test_ok():\n    assert 1 == 1\n",
+        encoding="utf-8",
+    )
+    (parent / "pyproject.toml").write_text(
+        '[tool.pytest.ini_options]\n'
+        'addopts = "--cov=nonexistent_pkg --cov-fail-under=90"\n',
+        encoding="utf-8",
+    )
+    code, out, err = run_pytest(ws, ["tests/test_ok.py"], timeout_sec=60)
+    assert code == 0, (out, err)
+    assert "passed" in out.lower() or out.strip() == ""
+
+
 def test_planner_extract_json_fenced() -> None:
     text = '```json\n[{"id":"A","type":"code"}]\n```'
     got = planner_tool._extract_json_array(text)
