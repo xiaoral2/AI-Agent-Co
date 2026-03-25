@@ -40,10 +40,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/xiaoranli/XR-AI-Co"
-Repository = "https://github.com/xiaoranli/XR-AI-Co"
-Issues = "https://github.com/xiaoranli/XR-AI-Co/issues"
-Changelog = "https://github.com/xiaoranli/XR-AI-Co/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/xiaoral2/AI-Agent-Co"
+Repository = "https://github.com/xiaoral2/AI-Agent-Co"
+Issues = "https://github.com/xiaoral2/AI-Agent-Co/issues"
+Changelog = "https://github.com/xiaoral2/AI-Agent-Co/blob/main/CHANGELOG.md"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
