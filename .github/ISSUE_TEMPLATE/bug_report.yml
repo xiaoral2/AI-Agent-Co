@@ -1,0 +1,62 @@
+name: Bug report
+description: Something is broken, wrong, or crashed
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Security:** do not use this public form. Report privately as described in **`SECURITY.md`** at the repository root.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong in one or two sentences?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Exact commands, config snippets, or minimal session state if relevant.
+      placeholder: |
+        1. `xr-ai-co run -y ...`
+        2. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Logs, traceback, or `xr-ai-co status --json` excerpt (redact secrets).
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version / environment
+      description: Python version, OS, and `pip show xr-ai-co` or git commit if from source.
+      placeholder: e.g. Python 3.13, macOS, commit abc1234
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Run mode
+      options:
+        - Template / no LLM
+        - Anthropic LLM
+        - Not sure
+    validations:
+      required: true

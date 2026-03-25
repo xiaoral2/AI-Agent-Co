@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xr-ai-co"
+version = "0.1.0"
+description = "XR-AI-Co harness — spec-driven orchestrator (Mode 1 MVP slice)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "jsonschema>=4.20",
+  "pytest>=7.4",
+  "pytest-cov>=4.1",
+  "anthropic>=0.39",
+  "pyyaml>=6.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = [
+  "--cov=orchestrator",
+  "--cov=xr_ai_co",
+  "--cov=tools",
+  "--cov-report=term-missing:skip-covered",
+  "--cov-fail-under=90",
+]
+
+[tool.coverage.run]
+source = ["orchestrator", "xr_ai_co", "tools"]
+omit = [
+  "main.py",
+  "xr_ai_co/cli.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "if TYPE_CHECKING:",
+]
+
+[project.scripts]
+xr-ai-co = "xr_ai_co.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["orchestrator*", "tools*", "xr_ai_co*"]

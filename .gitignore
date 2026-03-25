@@ -1,9 +1,41 @@
-# Local scratch / secrets (optional; see .cursor/rules/plan-scratchpad-habits.mdc)
-scratchpad.local.md
+# Python bytecode / caches
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+*.egg
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+.idea/
+
+# Virtual env / secrets
+.venv/
 .env
 .env.local
 
-# Future implementation defaults (§14)
+# IDE
+.cursor/
+
+# Local scratch
+scratchpad.local.md
+
+# Design specs (kept local — not committed)
+design_notes/
+
+# Runtime artefacts (§14)
 workspace/
 state/
 .xr_session/
