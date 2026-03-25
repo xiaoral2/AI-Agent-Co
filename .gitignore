@@ -1,0 +1,9 @@
+# Local scratch / secrets (optional; see .cursor/rules/plan-scratchpad-habits.mdc)
+scratchpad.local.md
+.env
+.env.local
+
+# Future implementation defaults (§14)
+workspace/
+state/
+.xr_session/
