@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xr-ai-co.local/schemas/task.v1.json",
+  "title": "XR-AI-Co Task (plan materialization v1)",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "description",
+    "status",
+    "depends_on",
+    "retry_count",
+    "plan_revision_id",
+    "input",
+    "output",
+    "constraints",
+    "acceptance_criteria",
+    "test_plan"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "type": { "type": "string", "enum": ["code", "test", "design"] },
+    "description": { "type": "string", "minLength": 1 },
+    "status": { "type": "string" },
+    "depends_on": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "owner": { "type": ["string", "null"] },
+    "retry_count": { "type": "integer", "minimum": 0 },
+    "plan_revision_id": { "type": "string", "minLength": 1 },
+    "input": { "type": "string", "minLength": 1 },
+    "output": { "type": "string", "minLength": 1 },
+    "constraints": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      ]
+    },
+    "acceptance_criteria": {
+      "oneOf": [
+        { "type": "string", "minLength": 1 },
+        {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      ]
+    },
+    "test_plan": { "type": "string", "minLength": 1 },
+    "verification": {
+      "type": "object",
+      "required": ["kind", "paths"],
+      "properties": {
+        "kind": { "type": "string", "enum": ["pytest"] },
+        "paths": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        },
+        "extra_args": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["low", "normal", "high", "urgent"]
+    },
+    "deadline": { "type": "string", "minLength": 1 },
+    "path_hints": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "design_notes": { "type": "string" }
+  },
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "properties": { "type": { "const": "test" } },
+        "required": ["type"]
+      },
+      "then": { "required": ["verification"] }
+    }
+  ]
+}
