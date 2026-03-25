@@ -57,7 +57,8 @@ def plan_with_llm(
     )
     messages[0]["content"] += (
         f"\n\n**Instruction:** produce a JSON array of tasks for plan_revision_id={plan_revision_id!r}. "
-        "Every test-type task must include a 'verification' object with 'kind' and 'paths'. "
+        "Every test-type task must include a 'verification' object with 'paths' and "
+        "`\"kind\": \"pytest\"` exactly (literal string pytest only; not execution, unittest, or shell). "
         "You may include `type: design` tasks that produce docs/interface.md; place them before "
         "dependent `code` tasks using `depends_on`. "
         "For every task, fields `input`, `output`, `description`, and `test_plan` must be JSON "

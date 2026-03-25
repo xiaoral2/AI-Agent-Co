@@ -135,7 +135,9 @@ def test_code_with_template_rate_limiter(tmp_path: Path) -> None:
 def test_code_with_template_generic(tmp_path: Path) -> None:
     r = code_with_template({"id": "T1"}, tmp_path, "generic")
     assert r.success
-    assert (tmp_path / "app" / "main.py").is_file()
+    assert (tmp_path / "app.py").is_file()
+    code, _, _ = run_pytest(tmp_path, ["tests/test_app.py"], timeout_sec=60)
+    assert code == 0
 
 
 def test_code_with_llm_success(tmp_path: Path) -> None:

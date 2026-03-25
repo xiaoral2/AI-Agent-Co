@@ -15,7 +15,6 @@ from orchestrator.types import ToolResult
 from tools.filesystem import write_file
 from xr_ai_co.builtin_templates import (
     GENERIC_MAIN,
-    GENERIC_PKG_INIT,
     GENERIC_TEST,
     RATE_LIMIT_MODULE,
     RATE_LIMIT_TEST,
@@ -126,10 +125,9 @@ def code_with_template(
             write_file(workspace, "tests/test_ratelimit.py", RATE_LIMIT_TEST)
             artifacts = ["ratelimit.py", "tests/test_ratelimit.py"]
         else:
-            write_file(workspace, "app/__init__.py", GENERIC_PKG_INIT)
-            write_file(workspace, "app/main.py", GENERIC_MAIN)
+            write_file(workspace, "app.py", GENERIC_MAIN)
             write_file(workspace, "tests/test_app.py", GENERIC_TEST)
-            artifacts = ["app/__init__.py", "app/main.py", "tests/test_app.py"]
+            artifacts = ["app.py", "tests/test_app.py"]
         return ToolResult(
             success=True,
             payload={"task_id": task["id"], "role": "coder"},

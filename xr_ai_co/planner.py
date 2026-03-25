@@ -100,11 +100,14 @@ def build_tasks(
             "plan_revision_id": plan_revision_id,
             "priority": "normal",
             "input": mission.strip(),
-            "output": "app/main.py with a working entrypoint",
-            "constraints": ["Python 3.11+"],
+            "output": (
+                "Workspace root app.py: def hello_world() -> str returning exactly "
+                "'Hello, World!'; def main() -> None calling print(hello_world()) or equivalent"
+            ),
+            "constraints": ["Python 3.11+", "single module app.py at workspace root (import app)"],
             "acceptance_criteria": ["tests/test_app.py passes"],
             "test_plan": "pytest tests/test_app.py",
-            "path_hints": ["app/main.py", "tests/test_app.py"],
+            "path_hints": ["app.py", "tests/test_app.py"],
         }
         test_task = {
             "id": test_id,
