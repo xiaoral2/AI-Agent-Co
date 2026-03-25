@@ -36,3 +36,5 @@ Use the [**Bug report** or **Feature request** templates](.github/ISSUE_TEMPLATE
 ## CI
 
 GitHub Actions runs `pytest` on Python 3.11–3.13 for pushes and PRs to `main` / `master` (see `.github/workflows/ci.yml`). If the workflow badge in the README shows “no workflow”, update the badge URL to your `owner/repository` path.
+
+The same `owner/repository` string appears in **`pyproject.toml`** (`[project.urls]`), **`CITATION.cff`** (`repository-code`), and README star/fork badges — keep them in sync when you rename or transfer the repo.

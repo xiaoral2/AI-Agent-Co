@@ -1,6 +1,8 @@
 # XR-AI-Co
 
 [![CI](https://github.com/xiaoranli/XR-AI-Co/actions/workflows/ci.yml/badge.svg)](https://github.com/xiaoranli/XR-AI-Co/actions)
+[![GitHub stars](https://img.shields.io/github/stars/xiaoranli/XR-AI-Co?style=social)](https://github.com/xiaoranli/XR-AI-Co/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/xiaoranli/XR-AI-Co?style=social)](https://github.com/xiaoranli/XR-AI-Co/forks)
 ![Python](https://img.shields.io/badge/python-3.11+-3776AB?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)
 
@@ -8,7 +10,7 @@
 
 Same *intent* as long-running agent stacks such as [TokenFly](https://tokenfly.ai/) and the open [Agentic_System](https://github.com/TokenFlyAI/Agentic_System) framework: **persistent goals, structured execution, and clear boundaries**. XR-AI-Co narrows that into a **Mode 1 MVP**: one workspace, JSON task graph, CEO gate, and explicit failure routing (see design spec §4.4, §7.2).
 
-> **Badges:** If the CI badge shows “no workflow”, replace `xiaoranli/XR-AI-Co` in the URL above with your GitHub `owner/repo`.
+> **GitHub `owner/repo`:** These badges and `[project.urls]` in `pyproject.toml` use **`xiaoranli/XR-AI-Co`**. After you create the remote (or if you fork), search-replace that string in **README.md** and **pyproject.toml** so CI / stars / forks / Issues links resolve. Until the repo exists on GitHub, the star/fork badges may show *invalid* or `0`.
 
 ---
 
@@ -121,6 +123,7 @@ XR-AI-Co/
 ├── CONTRIBUTING.md
 ├── SECURITY.md
 ├── CHANGELOG.md
+├── CITATION.cff
 └── README.md
 ```
 
@@ -280,6 +283,7 @@ Success-path code review gate, optional cost cap + USD heuristic, session wall-c
 - **[CONTRIBUTING.md](./CONTRIBUTING.md)** — tests, PRs, style, and [issue templates](.github/ISSUE_TEMPLATE/).
 - **[SECURITY.md](./SECURITY.md)** — responsible disclosure.
 - **[CHANGELOG.md](./CHANGELOG.md)** — release notes.
+- **[CITATION.cff](./CITATION.cff)** — citation metadata for papers / reports (update `repository-code` if your fork URL differs).
 
 ## License
 

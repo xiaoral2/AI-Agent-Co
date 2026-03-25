@@ -1,0 +1,16 @@
+# https://citation-file-format.github.io/
+cff-version: 1.2.0
+title: XR-AI-Co
+message: >-
+  If you use this software, please cite it using the metadata below.
+type: software
+authors:
+  - name: XR-AI-Co contributors
+repository-code: "https://github.com/xiaoranli/XR-AI-Co"
+url: "https://github.com/xiaoranli/XR-AI-Co"
+abstract: >-
+  Spec-driven orchestrator harness (Mode 1 MVP): DAG tasks, CEO gate,
+  planner/coder/tester/reviewer tools, checkpoints, and Anthropic or template mode.
+license: Apache-2.0
+version: 0.1.0
+date-released: "2026-03-24"
