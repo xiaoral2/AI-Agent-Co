@@ -1,8 +1,8 @@
 # XR-AI-Co
 
-[![CI](https://github.com/xiaoranli/XR-AI-Co/actions/workflows/ci.yml/badge.svg)](https://github.com/xiaoranli/XR-AI-Co/actions)
-[![GitHub stars](https://img.shields.io/github/stars/xiaoranli/XR-AI-Co?style=social)](https://github.com/xiaoranli/XR-AI-Co/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/xiaoranli/XR-AI-Co?style=social)](https://github.com/xiaoranli/XR-AI-Co/forks)
+[![CI](https://github.com/xiaoral2/AI-Agent-Co/actions/workflows/ci.yml/badge.svg)](https://github.com/xiaoral2/AI-Agent-Co/actions)
+[![GitHub stars](https://img.shields.io/github/stars/xiaoral2/AI-Agent-Co?style=social)](https://github.com/xiaoral2/AI-Agent-Co/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/xiaoral2/AI-Agent-Co?style=social)](https://github.com/xiaoral2/AI-Agent-Co/forks)
 ![Python](https://img.shields.io/badge/python-3.11+-3776AB?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)
 
@@ -10,7 +10,7 @@
 
 Same *intent* as long-running agent stacks such as [TokenFly](https://tokenfly.ai/) and the open [Agentic_System](https://github.com/TokenFlyAI/Agentic_System) framework: **persistent goals, structured execution, and clear boundaries**. XR-AI-Co narrows that into a **Mode 1 MVP**: one workspace, JSON task graph, CEO gate, and explicit failure routing (see design spec §4.4, §7.2).
 
-> **GitHub `owner/repo`:** These badges and `[project.urls]` in `pyproject.toml` use **`xiaoranli/XR-AI-Co`**. After you create the remote (or if you fork), search-replace that string in **README.md** and **pyproject.toml** so CI / stars / forks / Issues links resolve. Until the repo exists on GitHub, the star/fork badges may show *invalid* or `0`.
+> **GitHub `owner/repo`:** These badges and `[project.urls]` in `pyproject.toml` use **`xiaoral2/AI-Agent-Co`**. After you create the remote (or if you fork), search-replace that string in **README.md** and **pyproject.toml** so CI / stars / forks / Issues links resolve. Until the repo exists on GitHub, the star/fork badges may show *invalid* or `0`.
 
 ---
 
@@ -56,8 +56,8 @@ XR-AI-Co does **not** replace Agentic_System; it is a **smaller, spec-anchored**
 ## Quick start
 
 ```bash
-git clone https://github.com/xiaoranli/XR-AI-Co.git
-cd XR-AI-Co
+git clone https://github.com/xiaoral2/AI-Agent-Co.git
+cd AI-Agent-Co
 python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e .
@@ -111,7 +111,7 @@ Resume merges YAML policies into the checkpoint without a flag: `XR_AI_CO_RESUME
 ## Repository layout
 
 ```
-XR-AI-Co/
+AI-Agent-Co/
 ├── .github/workflows/ci.yml   # pytest on 3.11–3.13
 ├── orchestrator/              # state manager, scheduler, reference loop, types
 ├── tools/                     # filesystem, pytest, planner/coder/tester/reviewer/architect

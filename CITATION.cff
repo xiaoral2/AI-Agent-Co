@@ -6,8 +6,8 @@ message: >-
 type: software
 authors:
   - name: XR-AI-Co contributors
-repository-code: "https://github.com/xiaoranli/XR-AI-Co"
-url: "https://github.com/xiaoranli/XR-AI-Co"
+repository-code: "https://github.com/xiaoral2/AI-Agent-Co"
+url: "https://github.com/xiaoral2/AI-Agent-Co"
 abstract: >-
   Spec-driven orchestrator harness (Mode 1 MVP): DAG tasks, CEO gate,
   planner/coder/tester/reviewer tools, checkpoints, and Anthropic or template mode.
